@@ -1,10 +1,13 @@
-import { Input,Stack } from '@chakra-ui/react'
-import { ChakraProvider } from '@chakra-ui/react'
 import {
+  ChakraProvider,
+  Input,
+  Stack,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+  NumberInput,
+  NumberInputField,
+  Button, 
+  Textarea
 } from '@chakra-ui/react'
 
 const FlightReservation = () => {
@@ -15,17 +18,17 @@ const FlightReservation = () => {
       <ChakraProvider>
         <Stack spacing={3}>
         <FormControl isRequired>
-        <FormLabel>Origin</FormLabel>
+        <FormLabel>From?</FormLabel>
         <Input 
           variant='outline' 
           placeholder='Origin'
           colorScheme='green' />
         </FormControl>
         <FormControl isRequired>
-        <FormLabel>Destino</FormLabel>
+        <FormLabel>To?</FormLabel>
         <Input 
           variant='outline' 
-          placeholder='Destino'
+          placeholder='Destination'
           colorScheme='green' />
           </FormControl>
           
@@ -38,6 +41,17 @@ const FlightReservation = () => {
           colorScheme='green'
           />
           </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Number of passengers</FormLabel>
+            <NumberInput defaultValue={1} min={1} max={5}>
+              <NumberInputField />
+            </NumberInput>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Details</FormLabel>
+            <Textarea placeholder="Seat, loggage, food..." />
+          </FormControl>
+          <Button colorScheme='blue'>Reserve</Button>
           </Stack>
       </ChakraProvider>
     </div>
