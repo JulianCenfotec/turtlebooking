@@ -47,7 +47,7 @@ const FlightReservation = () => {
               <NumberInputField />
             </NumberInput>
           </FormControl>
-          <FormControl isRequired>
+          <FormControl>
             <FormLabel>Details</FormLabel>
             <Textarea placeholder="Seat, loggage, food..." />
           </FormControl>
