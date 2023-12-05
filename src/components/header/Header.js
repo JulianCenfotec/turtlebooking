@@ -9,6 +9,7 @@ const Header = () => {
   return(
       <div>
       <ChakraProvider>
+        
         <Tabs variant='soft-rounded' colorScheme='blue'>
           <TabList>
             <Tab>Hotel</Tab>
