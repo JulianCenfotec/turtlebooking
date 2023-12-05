@@ -2,7 +2,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import ActivityReservation from '../forms/ActivityReservation';
 import FlightReservation from '../forms/FlightReservation';
-import HotelReservation from '../forms/HotelReservation';
 import { ChakraProvider } from '@chakra-ui/react'
 
 const Header = () => {
@@ -25,7 +24,7 @@ const Header = () => {
               <FlightReservation/>
             </TabPanel>
             <TabPanel>
-              <p>Restaurant</p>
+              <RestaurantReservation/>
             </TabPanel>
             <TabPanel>
               <ActivityReservation/>
