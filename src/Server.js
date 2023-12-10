@@ -1,18 +1,14 @@
-const mysql = require('mysql');
-
-const db = mysql.createConnection({
-    host: 'database-1.cd5znruo4omg.us-east-2.rds.amazonaws.com',
-    port: '3306',
-    user: 'admin',
-    password: 'password',
-    database: '',
-});
-
-
-db.connect((err) => {
-  if (err) {
-    console.log(err.message);
-    return ;
+import { sql } from '@vercel/postgres';
+ 
+export default async function handler(
+  request,
+  response
+) {
+  try {
+    const result =
+      await sql`CREATE TABLE Pets ( Name varchar(255), Owner varchar(255) );`;
+    return response.status(200).json({ result });
+  } catch (error) {
+    return response.status(500).json({ error });
   }
-  console.log('Connected to the MySQL server.');
-});
+}
